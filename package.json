@@ -1,0 +1,31 @@
+{
+  "name": "botiga",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "sandra",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/sandra.poyatos.7e4/project_botiga_ibericos.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/sandra.poyatos.7e4/project_botiga_ibericos/issues"
+  },
+  "homepage": "https://gitlab.com/sandra.poyatos.7e4/project_botiga_ibericos#readme",
+  "description": "",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-vue": "^9.9.0"
+  }
+}

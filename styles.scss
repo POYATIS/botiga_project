@@ -1,0 +1,83 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+
+
+// GLOBAL
+.p-relative {
+    position: relative;
+}
+
+// NAV LINK
+.nav-link:hover{
+    background-color: $naranja;
+}
+
+// CARD TITLE
+.blue-hover{
+    color: $naranja;
+    text-decoration: none;
+}
+.blue-hover:hover{
+    color: $azul;
+}
+
+// JUMBOTRON
+.jumbotron-jumbo {
+    position: relative;
+    left: 50%;
+    width: 600px;
+    background-color: $marron;
+    padding: 1rem;
+}
+
+.jumbotron-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+}
+
+.jumbotron-button {
+    display: block;
+    background-color: $marron_gris;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+.jumbotron-button:hover {
+    background-color: $azul;
+}
+
+.jumbotron-img {
+    height: 200px;
+    width: 100%;
+    top: -100px;
+    z-index: -99;
+}
+
+.blue-hover {
+    color: black;
+    text-decoration: none;
+}
+.blue-hover:hover {
+    color: $azul;
+}
+
+// CAROUSEL
+.imgCarousel{
+    height: 600px;
+    width: auto;
+}
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+/* $theme-colors: map-remove($theme-colors, "dark", "primary"); */
+@import "./node_modules/bootstrap/scss/root";
+@import "./node_modules/bootstrap/scss/bootstrap.scss"
