@@ -2,6 +2,9 @@
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
 
+.bgprincipal{
+    background-color: #e65426;
+}
 
 // GLOBAL
 .p-relative {
@@ -69,6 +72,7 @@
     height: 600px;
     width: auto;
 }
+
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
