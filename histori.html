@@ -26,13 +26,13 @@
          <span class="navbar-toggler-icon"></span>
        </button>
        <!-- para que aparezca el menu -->
-       <div class="collapse navbar-collapse text-black" id="navbarSupportedContent text-black">
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
-           <li class="nav-item ">
+           <li class="nav-item">
              <a class="nav-link" href="index.html">INICIO</a>
            </li>
-           <li class="nav-item dropdown text-black">
-             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                data-bs-toggle="dropdown" aria-expanded="false">
                PRODUCTOS
              </a>
@@ -66,27 +66,30 @@
   
   </nav>
 
-<!-- CONTACTO -->
- <div class="container py-4">
-    <div class="row text-center">
+<!-- historia -->
+<body class="bg-naranja">
+  <!-- Aquí va el contenido de la página -->
+  <div class="container my-5 product-info">
+    <h1 class="text-center">Sobre nosotros</h1>
+    <hr>
 
-    <div class="col py-4">
-        <h3>REGÍSTRATE Y SIGUE INFORMADO DE NUESTRAS OFERTAS</h3>
-        <p>Escríbenos tus dudas y trataremos de responderle lo antes posible</p>
-        <form class= "form-horizontal text-left p-4 py-5 mx-5">
-            <label for="nombre">Nombre</label>
-            <input type="text"  class= "form-control" name="nombre" id="nombre">
-            <label for="mail">Email</label>
-            <input type="text"  class= "form-control" name="mail" id="mail">
-            <label for="mensaje">Mensaje</label>
-            <textarea type="text"  class= "form-control py-5" name="mensaje" id="mensaje"></textarea>
-            <button type="submit" class="btn btn-dark w-100">ENVIAR</button>
-        </form>
+    <p class="text-justify">IBÉRICOS Y MANCHEGOS es una empresa familiar que lleva más de 50 años dedicada a la cría, alimentación y cuidado de cerdos ibéricos y manchegos en la región de Huelva. Nuestros cerdos viven en libertad en extensas dehesas, donde se alimentan de bellotas y pastos naturales durante la época de montanera. De esta manera, se consigue una carne de gran calidad, con una textura y sabor únicos que distinguen nuestros productos.</p>
+    <p class="text-justify">Además, en IBÉRICOS Y MANCHEGOS nos preocupamos por el bienestar animal, por lo que nuestros cerdos reciben una atención personalizada y cuidadosa en todo momento. Contamos con expertos en nutrición animal, veterinarios y otros profesionales que garantizan el cuidado óptimo de nuestros animales, respetando en todo momento su ciclo vital y sus necesidades naturales.</p>
+    <p class="text-justify">Si buscas productos ibéricos y manchegos de calidad, elaborados de manera tradicional y respetando el medio ambiente y el bienestar animal, en IBÉRICOS Y MANCHEGOS encontrarás lo que buscas. ¡Visítanos y descubre todo lo que podemos ofrecerte!</p>
+  </div>
+
+    <!-- foto dehesa -->
+  <div class="container product-info">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <img src="imagenes/dehesa.jpeg" class="img-fluid" alt="dehesa">
+      </div>
     </div>
   </div>
-  </div>
 
-<!-- FOOTER -->
+
+
+  <!-- FOOTER -->
 
   <footer class="bg-warning text-black text-center">
     <div class="footer-content">
@@ -104,6 +107,8 @@
     </div>
 
   </footer>
+
+</body>
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +8,17 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+  <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container">
       <!-- icono -->
 
@@ -30,24 +31,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">INICIO</a>
+            <a class="nav-link text-black" href="index.html">INICIO</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdown" role="button"
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               PRODUCTOS
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="productos.html">JAMONES</a></li>
-              <li><a class="dropdown-item" href="productos.html">QUESOS</a></li>
-              <li><a class="dropdown-item" href="productos.html">EMBUTIDOS</a></li>
+              <li><a class="dropdown-item" href="producto_jamon.html">JAMONES</a></li>
+              <li><a class="dropdown-item" href="producto_queso.html">QUESOS</a></li>
+              <li><a class="dropdown-item" href="producto_iberico.html">EMBUTIDOS</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacta.html">CONTACTA</a>
+            <a class="nav-link text-black" href="contacta.html">CONTACTA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="form.html">NUESTRA EMPRESA</a>
+            <a class="nav-link text-black" href="histori.html">NUESTRA EMPRESA</a>
           </li>
         </ul>
         <div class="row">
@@ -64,10 +65,11 @@
       </div>
     </div>
     <!-- login -->
-    <section class="px-5">
+    <section>
       <a href="login/login.html"><i class="bi bi-person-circle" style="font-size: 2em; color: black;"></i></a>
-      <a href="#"><i class="bi bi-cart3" style="font-size: 2em; color: black;"></i></a>
+      <a href="#" class="cart-link">${cartIcon.innerHTML}</a>
     </section>
+    
     
   </nav>
   <!-- fotos productos anteriores -->
@@ -78,9 +80,10 @@
       <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2"></button>
     </div>
     <!-- Carrousel -->
-    <div class="carousel-inner">
+    <div class="carousel-inner bg-naranja product-info">
       <div class="carousel-item active">
         <div class="carousel-caption w-25 m-auto pb-5">
+          <h2 class="text-black">Jamón de bellota 100% Ibérico</h2>
           <p>Los mejores embutidos artesanales, hechos con ingredientes de primera calidad. Descubre un mundo de sabor en nuestra tienda de embutidos </p>
         </div>
 
@@ -88,7 +91,7 @@
       </div>
       <div class="carousel-item">
         <div class="carousel-caption w-25 m-auto pb-5">
-          <h2>QUESOS TÍPICOS DE LA MANCHA </h2>
+          <h2 class="text-black">QUESOS TÍPICOS DE LA MANCHA </h2>
           <p class="text-gris">Sumérgete en la tradición y el sabor auténtico de los quesos de La Mancha.</p>
           <p>En nuestra tienda encontrarás una cuidada selección de quesos elaborados con la mejor leche de la región. ¡Ven a probarlos y llévate a casa un trozo de nuestra tierra!"</p>
         </div>
@@ -106,9 +109,10 @@
   </div>
 
   <!-- productos-->
-  <div class="row mx-auto">
+  <div class="row mx-auto bg-naranja product-info ">
     <p class="title text-center">PRODUCTOS DESTACADOS</p>
-    <p class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p>
+    <h4 class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? </h4>
+     <p class="text-center mx-auto">En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p> 
     <div class="col-lg-4 col-mb-12">
       <div class="card">
         <a href="producto_queso.html"><img src="imagenes/queso2.png" class="card-img-top" alt="queso"></a>
@@ -117,7 +121,7 @@
           <p>Elaborados con leche de vaca, cabra u oveja </p>
           <div class="text-center">
             <p class="text-right">Con diferentes niveles de curación y sabores..</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
+            <i data-id="1" id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
           </div>
         </div>
@@ -131,8 +135,8 @@
           <h3 class="card-title">Salchichón ibérico</h3>
           <p>Lomo de orza</p>
           <div class="text-center">
-            <p class="text-right"> Embutidos: chorizo, salchichón, lomo, morcilla, entre otros.</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
+            <p class="text-right"> Embutidos: chorizo, salchichón, lomo, morcilla...</p>
+            <i id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
           </div>
         </div>
@@ -141,13 +145,13 @@
 
     <div class="col-lg-4 col-mb-12">
       <div class="card">
-        <a href=""><img src="imagenes/jamon.jpeg" class="card-img-top" alt="jamon"></a>
+        <a href="producto_jamon.html"><img src="imagenes/jamon.jpeg" class="card-img-top" alt="jamon"></a>
         <div class="card-body bg-warning">
           <h3 class="card-title">Jamónes ibéricos</h3>
           <p>De jabugo</p>
           <div class="text-center">
             <p class="text-right">Jamones procedentes de cerdos ibéricos, que se caracterizan por su sabor intenso y textura única.</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
+            <i id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
           </div>
         </div>
@@ -155,9 +159,9 @@
     </div>
   </div>
   <!-- publicidad -->
-  <div class="container-fluid">
+  <div class="container-fluid bg-naranja ">
     <div class="row">
-      <div class="col-12  text-center bg-secondary p-5">
+      <div class="col-12  text-center p-5">
         <p class="title">Compra tus productos antes de que se acaben</p>
         <button type="button" value="compra" class="btn btn-outline-warning"><i
             class="bi bi-ticket-perforated-fill"></i> COMPRAR PRODUCTOS</button>
@@ -167,9 +171,9 @@
 
   <!-- registrate -->
 
-  <div class="container-fluid">
+  <div class="container-fluid bg-naranja">
     <div class="row">
-      <div class="col-12  text-center bg-white p-5">
+      <div class="col-12  text-center p-5">
         <p class="title">¡Boletín informativo!</p>
         <p class="fst-italic fs-4">Puede darse de baja en cualquier momento.</p>
         <a type="button" value="subscripción" class="btn btn-outline-warning" href="contacta.html">Escríbenos</a>
@@ -194,6 +198,7 @@
 
   </footer>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
