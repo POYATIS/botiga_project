@@ -16,7 +16,6 @@
 
 </head>
 
-
 <body class="bg-naranja">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
@@ -66,86 +65,75 @@
       </div>
     </div>
     <!-- login -->
-    <section class="px-5">
+    <section >
       <a href="login/login.html"><i class="bi bi-person-circle" style="font-size: 2em; color: black;"></i></a>
       <a href="#"><i class="bi bi-cart3" style="font-size: 2em; color: black;"></i></a>
     </section>
     
   </nav>
-<!-- productos ibericos-->
-<div class="container">
-  <div class="row d-flex text-center">
-    <p class="title">VARIEDAD DE EMBUTIDOS</p>
-    <p>Una amplia selección de productos, desde el famoso jamón ibérico de bellota hasta chorizos, salchichones, lomos y mucho más. Todos nuestros productos están elaborados con los mejores ingredientes y siguiendo los procesos tradicionales de nuestra tierra.
 
-     </p>
-    <div class="col-xl-3 col-md-6">
-      <div class="card">
-         <img src="imagenes/salchi.jpeg" class="card-img-top" alt="salchichon">
-        <div class="card-body">
-          <h4 class="card-title text-warning">SALCHICHÓN IBÉRICO</h4>
-          <p class="card-text">Some quick example text to build on the card the bulk of the card's content.</p>
+  <!-- descripción producto-->
+  <div class="container py-5">
+    <div class="row d-flex">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card">
+          <img src="imagenes/jamon1.jpeg" class="card-img-top" alt="BELLOTA">
         </div>
       </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card">
-        <a href="cecina.html"> <img src="imagenes/cecina.jpeg" class="card-img-top" alt="cecina"> </a>
-        <div class="card-body">
-          <h4 class="card-title text-warning">CECINA DE VACA</h4>
-          <p class="card-text">Some quick example text to build on the card the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card">
-        <img src="imagenes/chorizo.jpeg" class="card-img-top" alt="chorizo">
-        <div class="card-body">
-          <h4 class="card-title text-warning">CHORIZO IBÉRICO</h4>
-          <p class="card-text">Some quick example text to build on the card the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card">
-       <img src="imagenes/lomo.jpeg" class="card-img-top" alt="lomo">
-        <div class="card-body">
-          <h4 class="card-title text-warning">CAÑA DE LOMO 100%</h4>
-          <p class="card-text">Some quick example text to build on the card the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- publicidad -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12  text-center p-5">
-        <p class="title">Compra tus productos antes de que se acaben</p>
-        <button type="button" value="compra" class="btn btn-outline-warning"><i
-            class="bi bi-ticket-perforated-fill"></i> COMPRAR PRODUCTOS</button>
-      </div>
-    </div>
-  </div>
-  
- <!-- FOOTER -->
- <footer class="bg-warning text-black text-center">
-  <div class="footer-content">
-    <h2 class="py-3">Síguenos en las redes sociales</h2>
-    <ul class=" redes d-flex justify-content-center">
-      <li> <a href="www.instagram.com"> <i class="bi bi-instagram text-danger"></i></a></li>
-      <li> <a href="www.facebook.com"> <i class="bi bi-facebook"></i></a></li>
-      <li> <a href="www.google.com"> <i class="bi bi-google text-danger"></i></a></li>
-      <li> <a href="www.twitter.com"> <i class="bi bi-twitter"></i></a></li>
-      <li> <a href="www.youtube.com"> <i class="bi bi-youtube text-danger"></i></a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy;Copyright 2023-by IBÉRICOS Y MANCHEGOS</p>
-  </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="product-info">
 
-</footer>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
-</body>
-</html>
+        <h3 class="text-center">Jamón de bellota 100% Ibérico</h3>
+        <p>El Jamón de Bellota 100% Ibérico es un producto gastronómico típico de España, elaborado a partir de cerdos ibéricos criados en libertad en la dehesa, alimentados exclusivamente con bellotas y pastos naturales. La calidad del jamón de bellota depende de factores como la raza del cerdo, la alimentación y el proceso de curación, que suele durar alrededor de 36 meses.</p>
+          <h4 class="text-right">98,90€</h4>  <br>
+          <div class="text-right">
+            <button class="btn btn-outline-warning dropdown-toggle ml-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecciona el peso
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">7-8kg</a>
+              <a class="dropdown-item" href="#">8-9kg</a>
+              <a class="dropdown-item" href="#">9-10kg</a>
+            </div>
+        </div>
+          <!-- peso producto-->
+        <div class="dropdown text-center">
+          <strong>Cantidad</strong> 
+            <div class="quantity">
+              <input class="btn btn-outline-warning" type="number" min="1" max="100" step="1" value="1">
+            </div>
+
+         
+        </div>
+        <section class="text-center" >
+          <a href="carrito.html" type="button" class="btn btn-success">AÑADIR AL CARRITO</a>
+        </section>
+      </div>
+    </div>
+    </div>
+  </div>
+    
+   <!-- FOOTER -->
+   <footer class="bg-warning text-black text-center">
+    <div class="footer-content">
+      <h2 class="py-3">Síguenos en las redes sociales</h2>
+      <ul class=" redes d-flex justify-content-center">
+        <li> <a href="www.instagram.com"> <i class="bi bi-instagram text-danger"></i></a></li>
+        <li> <a href="www.facebook.com"> <i class="bi bi-facebook"></i></a></li>
+        <li> <a href="www.google.com"> <i class="bi bi-google text-danger"></i></a></li>
+        <li> <a href="www.twitter.com"> <i class="bi bi-twitter"></i></a></li>
+        <li> <a href="www.youtube.com"> <i class="bi bi-youtube text-danger"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy;Copyright 2023-by IBÉRICOS Y MANCHEGOS</p>
+    </div>
   
+  </footer>
+  <script scr="./js/main.js"></script>
+  <script scr="./js/productos.js"></script>
+  <script scr="./js/carrito.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+  </body>
+  </html>
+    
