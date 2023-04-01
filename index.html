@@ -12,11 +12,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 </head>
 
-<body>
+<body ng-app="miApp">
 
   <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container">
@@ -67,7 +68,7 @@
     <!-- login -->
     <section>
       <a href="login/login.html"><i class="bi bi-person-circle" style="font-size: 2em; color: black;"></i></a>
-      <a href="#" class="cart-link">${cartIcon.innerHTML}</a>
+      <a href="carrito.html" class="cart-link"><i class="bi bi-cart4 text-black" style="font-size: 2em;"></i> <span class="badge bg-danger">3</span></a>
     </section>
     
     
@@ -109,18 +110,18 @@
   </div>
 
   <!-- productos-->
-  <div class="row mx-auto bg-naranja product-info ">
+  <div ng-controller="controller_product" class="row mx-auto bg-naranja product-info ">
     <p class="title text-center">PRODUCTOS DESTACADOS</p>
     <h4 class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? </h4>
      <p class="text-center mx-auto">En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p> 
-    <div class="col-lg-4 col-mb-12">
+    <div class="col-lg-4" ng-repeat="producto in productos">
       <div class="card">
         <a href="producto_queso.html"><img src="imagenes/queso2.png" class="card-img-top" alt="queso"></a>
         <div class="card-body bg-warning">
-          <h3 class="card-title">Quesos artesanales</h3>
-          <p>Elaborados con leche de vaca, cabra u oveja </p>
+          <h3 class="card-title">{{row.producto.nombre}}</h3>
+          <p>{{row.producto.descripcion}} </p>
           <div class="text-center">
-            <p class="text-right">Con diferentes niveles de curación y sabores..</p>
+            <p class="text-right">{{producto.informacion}}</p>
             <i data-id="1" id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
           </div>
@@ -128,29 +129,30 @@
       </div>
     </div>
 
-    <div class="col-lg-4 col-mb-12">
+    <div class="col-lg-4">
       <div class="card">
         <a href="producto_iberico.html"><img src="imagenes/ibericos2.jpeg" class="card-img-top" alt="ibericos"></a>
         <div class="card-body bg-warning">
-          <h3 class="card-title">Salchichón ibérico</h3>
-          <p>Lomo de orza</p>
+          <h3 class="card-title">{{producto.nombre}}</h3>
+          <p>{{producto.descripcion}}</p>
           <div class="text-center">
-            <p class="text-right"> Embutidos: chorizo, salchichón, lomo, morcilla...</p>
+            <p class="text-right">{{producto.informacion}}</p>
             <i id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
+            {{producto.informacion}}
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-lg-4 col-mb-12">
+    {{producto.informacion}}
+    <div class="col-lg-4">
       <div class="card">
         <a href="producto_jamon.html"><img src="imagenes/jamon.jpeg" class="card-img-top" alt="jamon"></a>
         <div class="card-body bg-warning">
-          <h3 class="card-title">Jamónes ibéricos</h3>
-          <p>De jabugo</p>
+          <h3 class="card-title">{{producto.nombre}}</h3>
+          <p>{{producto.descripcion}}</p>
           <div class="text-center">
-            <p class="text-right">Jamones procedentes de cerdos ibéricos, que se caracterizan por su sabor intenso y textura única.</p>
+            <p class="text-right">{{producto.informacion}}</p>
             <i id= "heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
           </div>
@@ -198,7 +200,9 @@
 
   </footer>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="/main.js"></script>
 </body>
 
 </html>

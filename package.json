@@ -1,17 +1,21 @@
 {
   "name": "botiga",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "sandra",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.8.2",
     "bootstrap": "^5.1.3",
+    "express": "^4.18.2",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "pg": "^8.10.0"
   },
   "repository": {
     "type": "git",
