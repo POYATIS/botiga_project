@@ -2,14 +2,25 @@ const express = require('express');
 const app = express();
 const { query } = require('./database.js');
 
-app.get('/api/producto', (req, res) => {
-  query('SELECT * FROM producto', (err, rows, fields) => {
-    if (!err) {
-      res.json(rows);
-    } else {
-      console.log(err);
+app.get('/', function(res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/api/producto', (res) => {
+  query('SELECT * FROM producto', (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error interno del servidor');
+      return;
     }
+
+    res.json(rows);
   });
 });
 
-app.listen(3000, () => console.log('Arriba en el 3000'));
+app.use(function (err, res) {
+  console.error(err.stack);
+  res.status(500).send('ERROR!');
+});
+
+app.listen(8080, () => console.log('Arriba en el 8000'));
