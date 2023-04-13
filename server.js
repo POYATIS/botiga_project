@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
-const { query } = require('./database.js');
+const db = require('./database.js');
 
-app.get('/', function(res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+console.log(db);
+
+app.get('/', (req, res) => {
+  res.send('Hola mundo!');
 });
 
-app.get('/api/producto', (res) => {
-  query('SELECT * FROM producto', (err, rows) => {
+
+app.get('/api/producto', (req, res) => {
+  db.query('SELECT * FROM producto', (err, rows) => {
     if (err) {
       console.error(err);
       res.status(500).send('Error interno del servidor');
@@ -18,9 +21,13 @@ app.get('/api/producto', (res) => {
   });
 });
 
-app.use(function (err, res) {
+
+console.log(db.query);
+
+
+app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('ERROR!');
 });
 
-app.listen(8080, () => console.log('Arriba en el 8000'));
+app.listen(3000, () => console.log('en el 3000'));

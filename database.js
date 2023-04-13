@@ -8,6 +8,19 @@ const pool = new Pool({
   port: 5432,
 });
 
-module.exports = {
-  query: (text, params) => pool.query(text, params),
-};
+pool.connect((err, client, done) => {
+  if (err) {
+    console.error('Error connect', err);
+  } else {
+    console.log('Conectado database');
+
+    client.query('SELECT * FROM producto', (err, result) => {
+      done(); 
+      if (err) {
+        console.error('Error', err);
+      } else {
+        console.log(result.rows);
+      }
+    });
+  }
+});
