@@ -1,9 +1,9 @@
 {
   "name": "botiga",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,6 +27,7 @@
   "homepage": "https://gitlab.com/sandra.poyatos.7e4/project_botiga_ibericos#readme",
   "description": "",
   "devDependencies": {
+    "@types/pg": "^8.6.6",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
