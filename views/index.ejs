@@ -8,11 +8,9 @@
   <title>IBÉRICOS Y MANCHEGOS</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
+  <link rel="stylesheet" href="../views/style.css">
+  <link rel="stylesheet" href="../views/styles.scss">
 </head>
 
 <body>
@@ -21,7 +19,7 @@
     <div class="container">
       <!-- icono -->
 
-      <a href="index.html"><img src="imagenes/icono.jpeg" class="navbar-brand" width="85px" alt="icono"></a>
+      <a href="../views/index.ejs"><img src="../assets/icono.jpeg" class="navbar-brand" width="85px" alt="icono"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -84,7 +82,7 @@
           <p>Los mejores embutidos artesanales, hechos con ingredientes de primera calidad. Descubre un mundo de sabor en nuestra tienda de embutidos </p>
         </div>
 
-        <img class="d-block m-auto imgCarousel" src="imagenes/jamon.jpeg">
+        <img class="d-block m-auto imgCarousel" src="assets/dehesa.jpeg">
       </div>
       <div class="carousel-item">
         <div class="carousel-caption w-25 m-auto pb-5">
@@ -92,7 +90,7 @@
           <p class="text-gris">Sumérgete en la tradición y el sabor auténtico de los quesos de La Mancha.</p>
           <p>En nuestra tienda encontrarás una cuidada selección de quesos elaborados con la mejor leche de la región. ¡Ven a probarlos y llévate a casa un trozo de nuestra tierra!"</p>
         </div>
-        <img src="imagenes/queso.jpeg" class="d-block m-auto imgCarousel">
+        <img src="assets/queso.jpeg" class="d-block m-auto imgCarousel">
       </div>
       <div class="carousel-item">
         <div class="carousel-caption w-25 m-auto pb-5">
@@ -100,85 +98,38 @@
           <p class="text-marron">
             Deléitate con nuestros sabores únicos y descubre por qué nuestros embutidos de Huelva son famosos en todo el mundo.</p>
         </div>
-        <img src="imagenes/embutido.png" class="d-block m-auto imgCarousel">
+        <img src="assets/embutido.png" class="d-block m-auto imgCarousel">
       </div>
     </div>
   </div>
 
 <!-- productos-->
-<div class="row mx-auto">
-  <p class="title text-center">PRODUCTOS DESTACADOS</p>
-  <p class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p>
-
-  <% productos.forEach(producto => { %>
-    <div class="col-lg-4 col-mb-12">
+<div class="row">
+  <div class="col-12">
+    <h2 class="text-center">Productos Destacados</h2>
+    <p class="text-center">¿Buscas productos artesanales de alta calidad? En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p>
+  </div>
+  
+  <% for (let producto of products) { %>
+    <div class="col-md-6 col-lg-4">
       <div class="card">
-        <a href="#"><img src="assets/<%= producto.imagen %>" class="card-img-top" alt="<%= producto.nombre %>"></a>
-        <div class="card-body bg-warning">
+        <div class="card-body">
           <h3 class="card-title"><%= producto.nombre %></h3>
-          <p><%= producto.descripcion %></p>
+          <h5 class="card-title"><%= producto.descripcion %></h5>
+          <ul class="list-unstyled">
+            <li>Precio: <%= producto.precio %> €</li>
+            <li>Existencias: <%= producto.num_existencias %></li>
+          </ul>
           <div class="text-center">
-            <p class="text-right"><%= producto.informacion %></p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
-            <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
+            <a href="#" class="btn btn-primary">Ver más</a>
           </div>
         </div>
       </div>
     </div>
-  <% }); %>
+  <% } %>
+  
 </div>
 
-
-
-  <!-- productos-->
-  <!-- <div class="row mx-auto">
-    <p class="title text-center">PRODUCTOS DESTACADOS</p>
-    <p class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? En nuestra tienda encontrarás una amplia selección de productos hechos a mano por expertos artesanos.</p>
-    <div class="col-lg-4 col-mb-12">
-      <div class="card">
-        <a href="producto_queso.html"><img src="imagenes/queso2.png" class="card-img-top" alt="queso"></a>
-        <div class="card-body bg-warning">
-          <h3 class="card-title">Quesos artesanales</h3>
-          <p>Elaborados con leche de vaca, cabra u oveja </p>
-          <div class="text-center">
-            <p class="text-right">Con diferentes niveles de curación y sabores..</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
-            <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-mb-12">
-      <div class="card">
-        <a href="producto_iberico.html"><img src="imagenes/ibericos2.jpeg" class="card-img-top" alt="ibericos"></a>
-        <div class="card-body bg-warning">
-          <h3 class="card-title">Salchichón ibérico</h3>
-          <p>Lomo de orza</p>
-          <div class="text-center">
-            <p class="text-right"> Embutidos: chorizo, salchichón, lomo, morcilla, entre otros.</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
-            <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-mb-12">
-      <div class="card">
-        <a href=""><img src="imagenes/jamon.jpeg" class="card-img-top" alt="jamon"></a>
-        <div class="card-body bg-warning">
-          <h3 class="card-title">Jamónes ibéricos</h3>
-          <p>De jabugo</p>
-          <div class="text-center">
-            <p class="text-right">Jamones procedentes de cerdos ibéricos, que se caracterizan por su sabor intenso y textura única.</p>
-            <i class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
-            <i class="bi bi-search px-2" style="font-size: 2rem;"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <!-- publicidad -->
   <div class="container-fluid">
     <div class="row">
@@ -218,7 +169,6 @@
     </div>
 
   </footer>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

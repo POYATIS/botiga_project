@@ -11,7 +11,7 @@ app.set('views', __dirname + '/../views');
 async function loadApp() {
 
     expressLoader(app);
-    
+    app.use(express.static(__dirname + '/../views'));
     app.use(bodyParser.json()); 
     app.use(bodyParser.urlencoded({ extended: true }));  
     app.use((err, req, res, next) => {
