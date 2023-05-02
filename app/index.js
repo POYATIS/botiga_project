@@ -3,6 +3,7 @@ const express = require('express');
 const expressLoader = require('./express');
 const bodyParser = require('body-parser');
 const productRoutes = require('../routes');
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -10,9 +11,9 @@ app.set('views', __dirname + '/../views');
 
 async function loadApp() {
 
+    app.use(express.static(path.join(__dirname, '..')));
+      
     expressLoader(app);
-    app.use(express.static(__dirname + '/../views'));
-    
     app.use(bodyParser.json()); 
     app.use(bodyParser.urlencoded({ extended: true }));  
     app.use((err, req, res, next) => {

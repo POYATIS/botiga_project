@@ -18,3 +18,11 @@
     padding-top: 5px;
     font-size: 15px;
 }
+.card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+  }
+  .card {
+    margin-bottom: 40px;
+  }
+  

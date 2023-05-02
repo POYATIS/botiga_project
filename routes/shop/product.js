@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll } = require('../../services/productService');
+const { getAll, getById } = require('../../services/productService');
 
 router.get('/', async (req, res, next) => {
   try {
@@ -11,5 +11,19 @@ router.get('/', async (req, res, next) => {
     next(err);
   }
 });
+
+router.get('/producto/:id', async (req, res, next) => {
+
+  try {
+    const id = req.params.id;
+    const producto = await getById(id);
+
+    res.render('producto', { producto });
+    console.log(producto);
+  } catch (err) { 
+    next(err);
+  }
+});
+
 
 module.exports = router;
