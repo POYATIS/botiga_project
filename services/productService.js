@@ -31,4 +31,4 @@ module.exports.getById = async (id) => {
       throw err;
     }
   }
-  
+

@@ -63,24 +63,34 @@
   </nav>
 
 <!-- CONTACTO -->
- <div class="container py-4">
-    <div class="row text-center">
+<div class="container py-4">
+  <div class="row text-center">
 
-    <div class="col py-4">
-        <h3>REGÍSTRATE Y SIGUE INFORMADO DE NUESTRAS OFERTAS</h3>
-        <p>Escríbenos tus dudas y trataremos de responderle lo antes posible</p>
-        <form class= "form-horizontal text-left p-4 py-5 mx-5">
-            <label for="nombre">Nombre</label>
-            <input type="text"  class= "form-control" name="nombre" id="nombre">
-            <label for="mail">Email</label>
-            <input type="text"  class= "form-control" name="mail" id="mail">
-            <label for="mensaje">Mensaje</label>
-            <textarea type="text"  class= "form-control py-5" name="mensaje" id="mensaje"></textarea>
-            <button type="submit" class="btn btn-dark w-100">ENVIAR</button>
-        </form>
-    </div>
+  <div class="col py-4">
+      <h3>REGÍSTRATE Y SIGUE INFORMADO DE NUESTRAS OFERTAS</h3>
+      <p>Escríbenos tus dudas y trataremos de responderle lo antes posible</p>
+      <form class= "form-horizontal text-left p-4 py-5 mx-5" method="post" action="/shop/products/clientes">
+          <label for="nombre">Nombre</label>
+          <input type="text"  class= "form-control" name="nombre" id="nombre" required>
+          <label for="nombre">Apellidos</label>
+          <input type="text"  class= "form-control" name="apellidos" id="apellidos" required>
+          <label for="mail">Email</label>
+          <input type="text"  class= "form-control" name="email" id="email" required>
+          <label for="telefono">Teléfono</label>
+          <input type="text"  class= "form-control" name="telefono" id="telefono" required>
+          <label for="direccion">Dirección</label>
+          <input type="text"  class= "form-control" name="direccion" id="direccion">
+          <button type="submit" class="btn btn-dark w-100" onclick="mostrarMensaje()">ENVIAR</button>
+      </form>
   </div>
-  </div>
+</div>
+</div>
+
+<script>
+  function mostrarMensaje() {
+    alert('¡Gracias por registrarte! Te mantendremos informado de nuestras ofertas.');
+  }
+</script>
 
 <!-- FOOTER -->
 
