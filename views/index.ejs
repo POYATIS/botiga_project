@@ -6,24 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IBÉRICOS Y MANCHEGOS</title>
-  <link rel="stylesheet" href="../public/style.css">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
     <div class="container">
       <!-- icono -->
 
-      <a href="/shop/product"><img src="../public/assets/icono.jpeg" class="navbar-brand" width="85px" alt="icono"></a>
+      <a href="/shop/product"><img src="/assets/icono.jpeg" class="navbar-brand" width="85px" alt="icono"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,7 +29,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="#">INICIO</a>
+            <a class="nav-link" href="/shop/product">INICIO</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -40,16 +37,16 @@
               PRODUCTOS
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="productos.html">JAMONES</a></li>
-              <li><a class="dropdown-item" href="productos.html">QUESOS</a></li>
-              <li><a class="dropdown-item" href="productos.html">EMBUTIDOS</a></li>
+              <li><a class="dropdown-item" href="product/producto/2">JAMONES</a></li>
+              <li><a class="dropdown-item" href="product/producto/1">QUESOS</a></li>
+              <li><a class="dropdown-item" href="product/producto/3">EMBUTIDOS</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacta.html">CONTACTA</a>
+            <a class="nav-link" href="/shop/product/clientes">CONTACTA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histori.html">NUESTRA EMPRESA</a>
+            <a class="nav-link" href="/histori.html">NUESTRA EMPRESA</a>
           </li>
         </ul>
         <div class="row">
@@ -66,13 +63,13 @@
       </div>
     </div>
     <!-- login -->
-    <section class="px-5">
-      <a href="clientes"><i class="bi bi-person-circle" style="font-size: 2em; color: black;"></i></a>
-      <a href="#"><i class="bi bi-cart3" style="font-size: 2em; color: black;"></i></a>
+    <section class="px-10 login">
+      <a href="/shop/product/clientes"><i class="bi bi-person-circle"></i></a>
+      <a href="#"><i class="bi bi-cart3"></i></a>
     </section>
 
   </nav>
-  <!-- fotos productos anteriores -->
+  <!-- fotos productos -->
   <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active"></button>
@@ -83,11 +80,12 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="carousel-caption w-25 m-auto pb-5">
+          <h2>JAMÓN IBÉRICOS </h2>
           <p>Los mejores embutidos artesanales, hechos con ingredientes de primera calidad. Descubre un mundo de sabor
             en nuestra tienda de embutidos </p>
         </div>
 
-        <img class="d-block m-auto imgCarousel" src="../public/assets/dehesa.jpeg">
+        <img class="d-block m-auto imgCarousel" src="/assets/jamon.jpeg">
       </div>
       <div class="carousel-item">
         <div class="carousel-caption w-25 m-auto pb-5">
@@ -96,7 +94,7 @@
           <p>En nuestra tienda encontrarás una cuidada selección de quesos elaborados con la mejor leche de la región.
             ¡Ven a probarlos y llévate a casa un trozo de nuestra tierra!"</p>
         </div>
-        <img src="../public//assets/queso.jpeg" class="d-block m-auto imgCarousel">
+        <img src="/assets/queso.jpeg" class="d-block m-auto imgCarousel">
       </div>
       <div class="carousel-item">
         <div class="carousel-caption w-25 m-auto pb-5">
@@ -105,37 +103,38 @@
             Deléitate con nuestros sabores únicos y descubre por qué nuestros embutidos de Huelva son famosos en todo el
             mundo.</p>
         </div>
-        <img src="../public/assets/embutido.png" class="d-block m-auto imgCarousel">
+        <img src="/assets/embutido.png" class="d-block m-auto imgCarousel">
       </div>
     </div>
   </div>
 
   <!-- productos-->
-  <div class="row mx-auto bg-naranja product-info">
+  <div class="row mt-5 mb-5 mx-auto bg-naranja product-info">
     <h2 class="text-center">Productos Destacados</h2>
     <h4 class="text-center mx-auto">¿Buscas productos artesanales de alta calidad? </h4>
     <p class="text-center mx-auto">En nuestra tienda encontrarás una amplia selección de productos hechos a mano por
       expertos artesanos.</p>
   </div>
-  <div class="row">
+  <div class="mt-5 mb-5 row">
     <% for (let producto of products) { %>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-lg-4 col-sm-8">
         <div class="card">
           <img src="../assets/<%= producto.imagen %>" class="card-img-top" alt="<%= producto.nombre %>">
           <div class="card-body bg-warning">
 
-            <h3 class="card-title text-center">
+            <h4 class="card-title text-center">
               <%= producto.nombre %>
-            </h3>
-            <h5 class="card-title">
+            </h4>
+            <h6 class="card-title">
               <%= producto.descripcion %>
-            </h5>
-            <ul class="list-unstyled">
-              <li>Precio: <%= producto.precio %> €</li>
-            </ul>
+            </h6>
+            <h4 class="list-unstyled">
+               <%= producto.precio %> €
+            </h4>
+            
             <div class="text-center">
-              <i data-id="1" id="heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
               <a href="/shop/product/producto/<%= producto.id %>" class="btn btn-primary">Ver más</a>
+              <i data-id="1" id="heart" class="bi bi-heart-fill text-danger px-2" style="font-size: 2rem;"></i>
             </div>
           </div>
         </div>
@@ -145,7 +144,7 @@
   </div>
 
   <!-- publicidad -->
-  <div class="container-fluid">
+  <div class="container-fluid mb-5">
     <div class="row">
       <div class="col-12  text-center bg-secondary p-5">
         <p class="title">Compra tus productos antes de que se acaben</p>
@@ -157,20 +156,20 @@
 
   <!-- registrate -->
 
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="row">
       <div class="col-12  text-center bg-white p-5">
         <p class="title">¡Boletín informativo!</p>
         <p class="fst-italic fs-4">Puede darse de baja en cualquier momento.</p>
-        <a type="button" value="subscripción" class="btn btn-outline-warning" href="contacta.html">Escríbenos</a>
+        <a type="button" value="subscripción" class="btn btn-outline-warning" href="/shop/product/clientes">Escríbenos</a>
       </div>
     </div>
   </div>
   <!-- FOOTER -->
-  <footer class="bg-warning text-black text-center">
+  <footer class="bg-warning text-black text-center ">
     <div class="footer-content">
       <h2 class="py-3">Síguenos en las redes sociales</h2>
-      <ul class=" redes d-flex justify-content-center">
+      <ul class="redes d-flex justify-content-center">
         <li> <a href="www.instagram.com"> <i class="bi bi-instagram text-danger"></i></a></li>
         <li> <a href="www.facebook.com"> <i class="bi bi-facebook"></i></a></li>
         <li> <a href="www.google.com"> <i class="bi bi-google text-danger"></i></a></li>
