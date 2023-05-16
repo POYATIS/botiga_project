@@ -69,74 +69,35 @@
 		
 	  </nav>
 
-<!-- productos-->
-<div class="container mt-5 mb-5>
-	<div class="row">
-	  <div class="col-md-6 mx-auto">
-		<div class="card">
-		  <h5 class="card-title text-center mt-5 mb-5"><%= producto.nombre %></h5>
-		  <img src="/assets/<%= producto.imagen %>" alt="<%= producto.nombre %>" class="card-img-top mx-auto d-block" style="max-width: 400px;">
-		  <div class="card-body text-center">
-			
-			<p class="card-text"><%= producto.descripcion %></p>
-			<p class="card-text"><%= producto.informacion %></p>
-			<h3 class="card-text"><%= producto.precio %> €</h3>
-			<!-- Carrito -->
-			<div id="carrito" class="d-flex justify-content-center align-items-center border p-3">
-				<button id="menos" class="btn btn-primary me-2">-</button>
-				<span id="cantidad" class="badge bg-secondary fs-4">0</span>
-				<button id="mas" class="btn btn-primary ms-2">+</button>
-			  </div>
-			  
-			<a href="/shop/product" class="mt-5 btn btn-outline-primary">Seguir comprando</a>
-			<a href="#" class="mt-5 btn btn-outline-warning" data-id="<%= producto.id %>">Añadir al carrito</a>
-	
-		</div>
-		</div>
-	  </div>
-	</div>
-  </div>
-  
-  <!-- FOOTER -->
-  <footer class="bg-warning text-black text-center">
-    <div class="footer-content">
-      <h2 class="py-3">Síguenos en las redes sociales</h2>
-      <ul class=" redes d-flex justify-content-center">
-        <li> <a href="www.instagram.com"> <i class="bi bi-instagram text-danger"></i></a></li>
-        <li> <a href="www.facebook.com"> <i class="bi bi-facebook"></i></a></li>
-        <li> <a href="www.google.com"> <i class="bi bi-google text-danger"></i></a></li>
-        <li> <a href="www.twitter.com"> <i class="bi bi-twitter"></i></a></li>
-        <li> <a href="www.youtube.com"> <i class="bi bi-youtube text-danger"></i></a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy;Copyright 2023-by IBÉRICOS Y MANCHEGOS</p>
-    </div>
+<!-- carrito -->
+	<!-- <% if (productosCarrito.length === 0) { %>
+		<p>No hay productos en el carrito.</p>
+	<% } else { %>
+		<ul>
+		<% productosCarrito.forEach((producto) => { %>
+			<li><%= producto.nombre %> - <%= producto.precio %> €</li>
+		<% }); %>
+		</ul>
+	<% } %> -->
 
-  </footer>
-  <script>
-	
-	const menosButton = document.getElementById("menos");
-	const masButton = document.getElementById("mas");
-	const cantidadSpan = document.getElementById("cantidad");
-  
-	let cantidad = 0; 
-  
-	function actualizarCantidad() {
-	  cantidadSpan.textContent = cantidad;
-	}
-  
-	menosButton.addEventListener("click", () => {
-	  if (cantidad > 0) {
-		cantidad--;
-		actualizarCantidad();
-	  }
-	});
-  
-	masButton.addEventListener("click", () => {
-	  cantidad++;
-	  actualizarCantidad();
-	});
-  </script>
-  
-</body>
+
+
+        <!-- FOOTER -->
+        <footer class="bg-warning text-black text-center">
+            <div class="footer-content">
+                <h2 class="py-3">Síguenos en las redes sociales</h2>
+                <ul class=" redes d-flex justify-content-center">
+                    <li> <a href="www.instagram.com"> <i class="bi bi-instagram text-danger"></i></a></li>
+                    <li> <a href="www.facebook.com"> <i class="bi bi-facebook"></i></a></li>
+                    <li> <a href="www.google.com"> <i class="bi bi-google text-danger"></i></a></li>
+                    <li> <a href="www.twitter.com"> <i class="bi bi-twitter"></i></a></li>
+                    <li> <a href="www.youtube.com"> <i class="bi bi-youtube text-danger"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;Copyright 2023-by IBÉRICOS Y MANCHEGOS</p>
+              </div>
+          
+            </footer>
+          </body>
+          

@@ -1,6 +1,19 @@
 const router = require('express').Router();
 const { getAll, getById } = require('../../services/productService');
 const { create } = require('../../services/clienteService');
+const { createCarrito } = require('../../services/carritoService');
+
+router.post('/carrito', async (req, res, next) => {
+  try {
+    console.log("Se está ejecutando el POST");
+    const { producto_id, cantidad } = req.body;
+    await createCarrito (producto_id, cantidad);
+    res.redirect('/');
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 router.post('/clientes', async (req, res, next) => {
   try {
