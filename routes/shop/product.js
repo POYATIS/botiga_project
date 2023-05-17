@@ -8,19 +8,26 @@ router.post('/carrito', async (req, res, next) => {
     console.log("Se está ejecutando el POST");
     const { producto_id, cantidad } = req.body;
     await createCarrito (producto_id, cantidad);
-    res.redirect('/');
+    res.render('carrito', { producto_id, cantidad });
   } catch (err) {
     next(err);
   }
 });
 
+router.use('/carrito', (req, res, next) => {
+  console.log("Solicitud recibida en /carrito");
+  next();
+});
+router.get('/carrito', (req, res) => {
+  res.render('carrito');
+});
 
 router.post('/clientes', async (req, res, next) => {
   try {
     console.log("Se está ejecutando el POST");
     const { nombre, apellidos, email, telefono, direccion } = req.body;
     await create (nombre, apellidos, email, telefono, direccion);
-    res.redirect('/');
+    res.redirect('/shop/product');
   } catch (err) {
     next(err);
   }

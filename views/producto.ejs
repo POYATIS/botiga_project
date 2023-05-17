@@ -82,15 +82,21 @@
 			<p class="card-text"><%= producto.informacion %></p>
 			<h3 class="card-text"><%= producto.precio %> €</h3>
 			<!-- Carrito -->
-			<div id="carrito" class="d-flex justify-content-center align-items-center border p-3">
-				<button id="menos" class="btn btn-primary me-2">-</button>
-				<span id="cantidad" class="badge bg-secondary fs-4">0</span>
-				<button id="mas" class="btn btn-primary ms-2">+</button>
-			  </div>
+			
+			<form id="carrito-form" action="/shop/product/carrito" method="POST">
+				<div id="carrito" class="d-flex justify-content-center align-items-center border p-3">
+				  <button id="menos" class="btn btn-primary me-2">-</button>
+				  <span id="cantidad" class="badge bg-secondary fs-4">0</span>
+				  <button id="mas" class="btn btn-primary ms-2">+</button>
 			  
-			<a href="/shop/product" class="mt-5 btn btn-outline-primary">Seguir comprando</a>
-			<a href="#" class="mt-5 btn btn-outline-warning" data-id="<%= producto.id %>">Añadir al carrito</a>
-	
+				  <input type="hidden" name="cantidad" id="cantidad-input" value="0">
+				  <input type="hidden" name="producto_id" value="<%= producto.id %>">
+				  
+				  <a href="/shop/product" class="mt-5 btn btn-outline-primary">Seguir comprando</a>
+				  <button type="submit" class="mt-5 btn btn-outline-warning" data-id="<%= producto.id %>">Añadir al carrito</button>
+				  
+				</div>
+			  </form>
 		</div>
 		</div>
 	  </div>
@@ -115,27 +121,35 @@
 
   </footer>
   <script>
-	
+	const carritoForm = document.getElementById("carrito-form");
 	const menosButton = document.getElementById("menos");
 	const masButton = document.getElementById("mas");
 	const cantidadSpan = document.getElementById("cantidad");
   
-	let cantidad = 0; 
+	let cantidad = 0;
   
 	function actualizarCantidad() {
 	  cantidadSpan.textContent = cantidad;
+	  document.getElementById("cantidad-input").value = cantidad;
 	}
   
-	menosButton.addEventListener("click", () => {
+	menosButton.addEventListener("click", (event) => {
+	  event.preventDefault(); 
 	  if (cantidad > 0) {
 		cantidad--;
 		actualizarCantidad();
 	  }
 	});
   
-	masButton.addEventListener("click", () => {
+	masButton.addEventListener("click", (event) => {
+	  event.preventDefault();
 	  cantidad++;
 	  actualizarCantidad();
+	});
+  
+	carritoForm.addEventListener("submit", (event) => {
+	  event.preventDefault();
+	  carritoForm.submit(); 
 	});
   </script>
   

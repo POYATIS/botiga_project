@@ -4,7 +4,7 @@ class Carrito {
       async createCarrito(carrito) {
         try {
             const statement = `INSERT INTO carrito (producto_id, cantidad)
-                                VALUES ($1, $2, $3) RETURNING *`;
+                                VALUES ($1, $2) RETURNING *`;
     
             const values = [carrito.producto_id, carrito.cantidad];
     
