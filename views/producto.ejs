@@ -64,7 +64,7 @@
 		<!-- login y carrito -->
 		<section class="px-10 login">
 		  <a href="/shop/product/clientes"><i class="bi bi-person-circle"></i></a>
-		  <a href="#"><i class="bi bi-cart3"></i></a>
+		  <a href="/shop/product/carrito"><i class="bi bi-cart3"></i></a>
 		</section>
 		
 	  </nav>
@@ -78,7 +78,7 @@
 		  <img src="/assets/<%= producto.imagen %>" alt="<%= producto.nombre %>" class="card-img-top mx-auto d-block" style="max-width: 400px;">
 		  <div class="card-body text-center">
 			
-			<p class="card-text"><%= producto.descripcion %></p>
+			<h4 class="card-text"><%= producto.descripcion %></h4>
 			<p class="card-text"><%= producto.informacion %></p>
 			<h3 class="card-text"><%= producto.precio %> €</h3>
 			<!-- Carrito -->

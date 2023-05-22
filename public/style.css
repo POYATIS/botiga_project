@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 .title{
     font-size: 60px;
     color: rgb(4, 67, 8);
@@ -32,6 +39,8 @@ ul.redes {
     color: black;
     margin-right: 10px;
   }
+
+  
   
   
   

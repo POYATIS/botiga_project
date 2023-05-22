@@ -1,11 +1,5 @@
 const db = require('../db/config');
 class Product {
-
-    /**
-     * Returns all products in the database
-     *
-     * @return {Array|null} the product(s), if there are any on the database
-     */
     async getAll() {
         try {
             const statement = `SELECT *
